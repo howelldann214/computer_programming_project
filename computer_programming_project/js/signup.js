@@ -1,6 +1,5 @@
 // signup.js
 
-// 假設儲存註冊資料的陣列（這裡為測試使用，實際情況應該儲存到資料庫或後端伺服器）
 let users = [];
 
 // 註冊表單提交的處理函式
@@ -18,14 +17,26 @@ function handleSignup(event) {
         return;
     }
 
+    // 驗證密碼長度和複雜度
+    if (!validateLength(password)) {
+        alert("密碼需至少包含 8 位字符");
+        return;
+    }
+
+    if (!validateComplexity(password)) {
+        alert("密碼必須包含大小寫字母和數字");
+        return;
+    }
+
     // 密碼確認
     if (password !== confirmPassword) {
         alert('密碼不一致，請重新確認');
         return;
     }
 
-    // 儲存註冊資料（僅儲存一筆測試資料）
-    users.push({ username, password });
+    // 儲存註冊資料到 localStorage
+    localStorage.setItem('username', username);
+    localStorage.setItem('password', password);
 
     // 顯示註冊成功訊息
     alert('註冊成功！');
@@ -36,3 +47,66 @@ function handleSignup(event) {
 
 // 綁定表單提交事件
 document.getElementById('signupForm').addEventListener('submit', handleSignup);
+
+// 密碼長度驗證
+function validateLength(password) {
+    return password.length >= 8;
+}
+
+// 密碼複雜度驗證
+function validateComplexity(password) {
+    const hasUpperCase = /[A-Z]/.test(password);
+    const hasLowerCase = /[a-z]/.test(password);
+    const hasNumber = /[0-9]/.test(password);
+
+    return hasUpperCase && hasLowerCase && hasNumber;
+}
+
+// 即時顯示密碼提示
+function checkPasswordInput() {
+    const password = document.getElementById("password").value;
+    const hintElement = document.getElementById("password-hint");
+
+    if (!validateLength(password)) {
+        hintElement.textContent = "密碼需至少包含 8 位字符";
+        hintElement.style.color = "red";
+        hintElement.style.display = "block";
+    } else if (!validateComplexity(password)) {
+        hintElement.textContent = "密碼必須包含大小寫字母和數字";
+        hintElement.style.color = "red";
+        hintElement.style.display = "block";
+    } else {
+        hintElement.textContent = "";
+        hintElement.style.display = "none";
+    }
+}
+
+// 即時顯示確認密碼提示
+function checkPasswordConfirm() {
+    const password = document.getElementById("password").value;
+    const passwordConfirm = document.getElementById("confirm-password").value;
+    const hintElement = document.getElementById("confirm-password-hint");
+
+    if (password !== passwordConfirm) {
+        hintElement.textContent = "密碼不一致";
+        hintElement.style.color = "red";
+        hintElement.style.display = "block";
+    } else {
+        hintElement.textContent = "";
+        hintElement.style.display = "none";
+    }
+}
+
+// 顯示或隱藏密碼
+function togglePassword() {
+    const passwordField = document.getElementById("password");
+    const toggleButton = document.getElementById("toggle-password");
+
+    if (passwordField.type === "password") {
+        passwordField.type = "text";
+        toggleButton.textContent = "隱藏";
+    } else {
+        passwordField.type = "password";
+        toggleButton.textContent = "顯示";
+    }
+}

@@ -1,89 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>中大購物網</title>
     <link rel="stylesheet" href="style.css">
-    <script src="../js/auth.js" defer></script>
     <script src="../js/common.js" defer></script>
+    <script src="../js/testproduct.js" defer></script> <!-- 引入 testproduct.js -->
 </head>
 <body>
     <header>
         <div class="top-bar">
             <div class="logo">
-                <a href="../main/main.html"><img src="../material/icon-1.png"  alt="logo"></a>
+                <a href="../main/main.html"><img src="../material/icon-1.png" alt="logo"></a>
             </div>
             <div class="cart">
                 <a href="../cart/cart.html"><img src="../material/cart.png" alt="cart"></a>
                 <div class="top-right">
-                    <!-- 此處會由 JavaScript 更新 -->
+                    <!-- 這裡會由 JavaScript 更新 -->
                 </div>
             </div>
         </div>
     </header>
-    
+
     <!-- 商品預覽頁 -->
     <main>
-        <section class="grid-container">
-            <a href="../product/product.html" class="grid-link">
-                <div class="grid-item">
-                    <div class="image-container">
-                        <img src="https://img.pchome.com.tw/cs/items/DMBL53A900HVOMD/000001_1727236783.jpg" alt="Tutor 1">
-                    </div>
-                    <h3>NAME 1</h3>
-                    <h3 class="price">$</h3> 
-                </div>
-            </a>
-    
-            <a href="" class="grid-link">
-                <div class="grid-item">
-                    <div class="image-container">
-                        <img src="https://agirls.aottercdn.com/media/f22b4529-4b61-4316-a4ae-e8c7544a4ea8.jpg" alt="Tutor 2">
-                    </div>
-                    <h3>NAME 2</h3>
-                    <h3 class="price">$</h3> 
-                </div>
-            </a>
-    
-            <a href="" class="grid-link">
-                <div class="grid-item">
-                    <div class="image-container">
-                        <img src="tutor3.jpg" alt="Tutor 3">
-                    </div>
-                    <h3>NAME 3</h3>
-                    <h3 class="price">$</h3> 
-                </div>
-            </a>
-    
-            <a href="" class="grid-link">
-                <div class="grid-item">
-                    <div class="image-container">
-                        <img src="tutor4.jpg" alt="Tutor 4">
-                    </div>
-                    <h3>NAME 4</h3>
-                    <h3 class="price">$</h3> 
-                </div>
-            </a>
-
-            <a href="" class="grid-link">
-                <div class="grid-item">
-                    <div class="image-container">
-                        <img src="tutor5.jpg" alt="Tutor 5">
-                    </div>
-                    <h3>NAME 5</h3>
-                    <h3 class="price">$</h3> 
-                </div>
-            </a>
+        <section class="grid-container" id="product-container">
+            <!-- 商品格子會在這裡動態生成 -->
         </section>
-        <div class="test">
-            <button onclick="login('test_user')">模擬登入</button>
-            <button onclick="logout()">模擬登出</button>
-        </div>
     </main>
-    
+
     <footer>
         <p>&copy; Department computer network and programming project</p>
+        <button onclick="onButtonClick()">儲存商品資料</button> <!-- 儲存商品資料的按鈕 -->
     </footer>
 </body>
 </html>

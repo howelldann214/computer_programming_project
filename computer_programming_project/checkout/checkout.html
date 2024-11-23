@@ -5,18 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>結帳</title>
     <link rel="stylesheet" href="checkout.css">
-    <script src="transport.js" defer></script>
+    <script src="transport_payment.js" defer></script>
     <!-- 登入檢查 -->
-    <script src="../js/auth.js" defer></script>
-    <script src="../js/common.js" defer></script>
-    <script>
-        // 檢查是否已登入，未登入則跳轉到登入頁面
-        document.addEventListener('DOMContentLoaded', function () {
-            if (!checkLogin()) {
-                redirectToLogin();
-            }
-        });
-    </script>
+    <script src="../js/checkout.js" defer></script>
+    <script src="../js/auth.js" defer></script> <!-- 引入 auth.js -->
 </head>
 <body>
     <header>
@@ -25,10 +17,7 @@
                 <a href="../main/main.html"><img src="../material/icon-1.png" alt="logo"></a>
             </div>
             <div class="top-right">
-                <ul>
-                    <li><a href="../login/login.html">登入</a></li>
-                    <li><a href="../signup/signup.html">註冊</a></li>
-                </ul>
+                <!-- 用戶名稱將由 auth.js 動態顯示 -->
             </div>
         </div>
     </header>
@@ -44,22 +33,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td class="item-details">
-                            <img src="https://img.pchome.com.tw/cs/items/DMBL53A900HVOMD/000001_1727236783.jpg" alt="商品圖片">
-                            <div>
-                                <p class="item-title">商品名稱 1</p>
-                            </div>
-                        </td>
-                        <td>$100</td>
-                        <td>2</td>
-                        <td>$200</td>
-                    </tr>
+                    <!-- 購物車商品將會動態填充在這裡 -->
                 </tbody>
                 <tfoot>
                     <tr class="total-row">
-                        <td colspan="3" class="total-label">訂單金額 (3 商品):</td>
-                        <td class="total-price">$250</td>
+                        <td colspan="3" class="total-label">訂單金額:</td>
+                        <td class="total-price">$0.00</td>
                     </tr>
                 </tfoot>
             </table>
@@ -71,12 +50,12 @@
                 <button type="button" class="method-btn" data-value="store">超商取貨</button>
                 <input type="hidden" name="transport" id="transport-input">
             </div>
-             <!-- 地址输入框，默认隐藏 -->
+            <!-- 地址輸入框，預設隱藏 -->
             <div class="address-input" id="address-container" style="display: none;">
                 <label for="address">地址:</label>
                 <input type="text" id="address" name="address">
             </div>
-            <!-- 超商取貨选择，默认隐藏 -->
+            <!-- 超商取貨選擇，預設隱藏 -->
             <div class="store-input" id="store-container" style="display: none;">
                 <label for="store-select">便利商店:</label>
                 <select id="store-select">
@@ -101,5 +80,5 @@
             <button class="pay-btn">付款</button>
         </div>
     </main>
-    <script src="transport_payment.js" ></script>
 </body>
+</html>

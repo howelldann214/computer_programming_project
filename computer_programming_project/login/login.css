@@ -129,7 +129,8 @@ footer {
     color: #007BFF;
     cursor: pointer;
     height: 40px; /* 設置固定高度與輸入框一致 */
-    padding: 0 10px; /* 減少按鈕的左右內邊距，使其更緊湊 */
+    width: 40px; /* 設置固定寬度與高度一致 */
+    
     font-size: 14px;
     transition: background-color 0.3s ease; /* 添加過渡效果 */
 }

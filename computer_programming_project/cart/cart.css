@@ -107,11 +107,13 @@ header {
     text-overflow: ellipsis; /* 超過部分用省略號顯示 */
 }
 
+
 /* 商品價格部分 */
 .item-prices {
     flex: 1;
     text-align: right; /* 價格右對齊 */
     font-size: 20px;
+    min-width: 80px; /* 為價格部分預留最小寬度 */
 }
 
 /* 數量選擇部分 */
@@ -123,10 +125,11 @@ header {
 }
 
 .quantity-btn {
+    height: 30px;
+    width: 30px;
     background-color: #7B4397;
     color: white;
     border: none;
-    padding: 5px 10px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -136,14 +139,16 @@ header {
 }
 
 .remove-btn {
+    height : 30px;
+    width: 50px;
     background-color: #ff0000;
     color: white;
     border: none;
-    padding: 5px 10px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-left: 10px;
-    border-radius: 2px;
+    border-radius: 4px;
+
 }
 .quantity {
     margin: 0 10px;
@@ -152,9 +157,11 @@ header {
 
 /* 商品總價部分 */
 .item-total {
+    width: 200px;
     flex: 1;
     padding-right: 20px;
     text-align: right; /* 保證總價在最右側 */
+    min-width: 160px; /* 確保總價區域有足夠寬度，不會因為數字增長而變形 */
 }
 
 .item-total h3 {

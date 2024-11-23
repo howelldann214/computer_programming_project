@@ -5,62 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>商品頁</title>
     <link rel="stylesheet" href="product.css">
-    <script src="../js/auth.js" defer></script>
-    <script src="../js/common.js" defer></script>
+    <script src="../js/common.js" defer></script> <!-- 這裡引入 common.js -->
 </head>
 <body>
     <header>
         <div class="top-bar">
             <div class="logo">
-                <a href="../main/main.html"><img src="../material/icon-1.png"  alt="logo"></a>
+                <a href="../main/main.html"><img src="../material/icon-1.png" alt="logo"></a>
             </div>
             <div class="top-right">
                 <!-- 此處會由 JavaScript 更新 -->
             </div>
         </div>
     </header>
-    
+
     <main>
         <div class="product-container">
             <!-- 左邊圖片 -->
             <div class="product-image">
-                <img src="../material/範例商品照片.webp" alt="商品圖片">
+                <img src="" alt="商品圖片" id="product-image">
             </div>
-            
+
             <!-- 右邊商品詳情 -->
             <div class="product-details">
                 <div class="product-info">
-                    <h1 class="product-title">商品名稱示例</h1>
+                    <h1 class="product-title" id="product-title">商品名稱示例</h1>
                     <div class="product-prices">
-                        <b><p class="product-price">$199</p></b>
+                        <b><p class="product-price" id="product-price">$199</p></b>
                     </div>
-                    <!-- 庫存 -->
-                    <p class="product-stock">庫存：10 件</p>
-                    <!-- 商品敘述 -->
+                    <p class="product-stock" id="product-stock">庫存：10 件</p>
                     <div class="product-description">
-                        <ul>
+                        <ul id="product-description">
                             <li>這段文字將從後端獲取，請稍後更新。</li>
-                            <li>更多詳細資訊即將到來，敬請期待。</li>
-                            <li>哈哈哈哈哈</li>
                         </ul>
                     </div>
                 </div>
-                <!-- 選取數量與按鈕 -->
+                <script src="../js/product.js"></script> <!-- 這裡引入 product.js -->
                 <div class="purchase-section">
-                    <!-- 選取數量 -->
                     <div class="quantity-label">
                         <input type="number" id="quantity" name="quantity" min="1" max="10" value="1" class="quantity-input">
                     </div>
-                
-                    <!-- 加入購物車和直接購買按鈕 -->
                     <button class="cart-btn">加入購物車</button>
                     <button class="buy-now-btn">立即購買</button>
                 </div>
             </div>
         </div>
     </main>
-    
 
-    <script src="product.js"></script>
+    
 </body>
 </html>

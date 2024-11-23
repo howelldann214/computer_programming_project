@@ -1,6 +1,10 @@
+function checkLogin() {
+    return localStorage.getItem('isLoggedIn') === 'true';
+}
 document.addEventListener('DOMContentLoaded', function () {
     const isLoggedIn = checkLogin();
     const topRight = document.querySelector('.top-right');
+
 
     if (isLoggedIn) {
         // 如果已登入，顯示使用者名稱及登出按鈕
@@ -21,3 +25,8 @@ document.addEventListener('DOMContentLoaded', function () {
         `;
     }
 });
+function logout() {
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('username');
+    window.location.href = '../login/login.html';
+}

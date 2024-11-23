@@ -6,16 +6,8 @@
     <title>購物車</title>
     <link rel="stylesheet" href="cart.css">
     <!-- 登入檢查 -->
+    <script src="../js/cart.js" defer></script>
     <script src="../js/auth.js" defer></script>
-    <script src="../js/common.js" defer></script>
-    <script>
-        // 檢查是否已登入，未登入則跳轉到登入頁面
-        document.addEventListener('DOMContentLoaded', function () {
-            if (!checkLogin()) {
-                redirectToLogin();
-            }
-        });
-    </script>
 </head>
 <body>
     <header>
@@ -24,10 +16,7 @@
                 <a href="../main/main.html"><img src="../material/icon-1.png" alt="logo"></a>
             </div>
             <div class="top-right">
-                <ul>
-                    <li><a href="../login/login.html">登入</a></li>
-                    <li><a href="../signup/signup.html">註冊</a></li>
-                </ul>
+                
             </div>
         </div>
     </header>
@@ -50,15 +39,13 @@
                 <div class="item-total">
                     <h3>$100</h3>
                 </div>
-            </div>
+        </div>
         <div class="cart-total">
             <h2>
-                總價 <span class="original-word">(3個商品)</span>：
-                <span class="red-color">$$$</span>
+                總價 <span class="original-word">(0個商品)</span>：  <!-- 這裡顯示商品數量 -->
+                <span class="red-color">$0.00</span>  <!-- 這裡顯示總價 -->
             </h2>
-            <a href="../checkout/checkout.html">
-                <button class="checkout-btn">結帳</button>
-            </a>
+            <button class="checkout-btn">結帳</button>
         </div>
     </main>
 </body>

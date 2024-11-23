@@ -1,33 +1,84 @@
-//運送、付款UI製作
 document.addEventListener('DOMContentLoaded', function () {
     const transportButtons = document.querySelectorAll('.transport-method .method-btn');
     const paymentButtons = document.querySelectorAll('.payment-method .method-btn');
+    const payButton = document.querySelector('.pay-btn');
+    
+    const transportInput = document.getElementById('transport-input');
+    const paymentInput = document.getElementById('payment-input');
 
+    const addressContainer = document.getElementById('address-container');
+    const storeContainer = document.getElementById('store-container');
+    const addressInput = document.getElementById('address');
+    const storeSelect = document.getElementById('store-select');
+    const branchInput = document.getElementById('branch');
+
+    let isTransportSelected = false;
+    let isPaymentSelected = false;
+
+    // 運送方式選擇
     transportButtons.forEach(button => {
         button.addEventListener('click', function () {
             transportButtons.forEach(btn => btn.classList.remove('selected'));
             button.classList.add('selected');
-            document.getElementById('transport-input').value = button.dataset.value;
+            transportInput.value = button.dataset.value;
+
+            // 判斷選擇的運送方式並顯示對應的輸入框
+            if (button.dataset.value === 'home') {
+                addressContainer.style.display = 'block';
+                storeContainer.style.display = 'none';
+            } else if (button.dataset.value === 'store') {
+                addressContainer.style.display = 'none';
+                storeContainer.style.display = 'block';
+            }
+
+            // 標記運送方式已選擇
+            isTransportSelected = true;
         });
     });
 
+    // 付款方式選擇
     paymentButtons.forEach(button => {
         button.addEventListener('click', function () {
             paymentButtons.forEach(btn => btn.classList.remove('selected'));
             button.classList.add('selected');
-            document.getElementById('payment-input').value = button.dataset.value;
+            paymentInput.value = button.dataset.value;
+
+            // 標記付款方式已選擇
+            isPaymentSelected = true;
         });
     });
-});
 
-//提示購買完成並跳回主畫面
-document.addEventListener('DOMContentLoaded', function () {
-    const payButton = document.querySelector('.pay-btn');
-
+    // 付款按鈕點擊事件
     payButton.addEventListener('click', function () {
-        // 显示购买完成的消息
+        // 檢查是否選擇了運送和付款方式
+        if (!isTransportSelected || !isPaymentSelected) {
+            alert('請選擇運送方式和付款方式！');
+            return;
+        }
+
+        // 檢查運送方式和付款方式的必填欄位
+        if (transportInput.value === 'home' && !addressInput.value) {
+            alert('請填寫地址！');
+            return;
+        }
+
+        if (transportInput.value === 'store' && (!storeSelect.value || !branchInput.value)) {
+            alert('請選擇便利商店並填寫分店！');
+            return;
+        }
+
+        if (paymentInput.value === 'cash' && !branchInput.value) {
+            alert('請填寫分店！');
+            return;
+        }
+
+        // 顯示完成訊息
         alert('購買完成，感謝您的購買');
-        // 跳轉回主畫面 (例如 main.html)
+
+        // 清空購物車資料（localStorage）
+        localStorage.removeItem('cart');
+
+        // 跳轉回主頁面
         window.location.href = '../main/main.html';
     });
 });
