@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中大購物網-註冊頁面</title>
+    <link rel="stylesheet" href="signup.css">
+    <script src="validate.js"></script>
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="top-left">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <nav class="main-nav">
+            <div class="logo">
+                <a href="#">MyWebsite</a>
+            </div>
+
+            <div class="nav-icons">
+                <a href="#">Notifications</a>
+            </div>
+        </nav>
+    </header>
+    <div class="form-container">
+        <h2>使用者註冊</h2><br>
+        <form action="/register" method="POST" onsubmit="return validateForm()"></form>
+            <!--使用者名稱-->
+            <div class="input-group">
+                <label for="username">使用者名稱:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            
+            <!--密碼-->
+            <div class="input-group password-group">
+                <label for="password">密碼:</label>
+                <div class="password-container">
+                    <input type="password" id="password" name="password" required oninput="checkPasswordInput()">
+                    <button type="button" id="toggle-password" class="toggle-password-btn" onclick="togglePassword()">顯示</button>
+                </div>
+                <span id="password-hint" class="hint"></span> <!-- 顯示提示信息 -->
+            </div>
+
+            <!--確認密碼-->
+            <div class="input-group">
+                <label for="confirm-password">再次輸入密碼:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required oninput="checkPasswordConfirm()">
+                <span id="confirm-password-hint" class="hint"></span> <!-- 顯示提示信息 -->
+            </div>
+            <!--註冊-->
+            <button type="submit">註冊</button>
+            <p>已經有帳號了嗎？ <a href="../login/login.html">按這裡登入</a></p>
+        </form>
+    </div>
+    <script>
+        // 使用 validate.js 中的函數
+        function validateForm() {
+            const password = document.getElementById("password").value;
+
+            if (!validateLength(password)) {
+                alert("密碼需至少包含 8 位字符");
+                return false;
+            }
+
+            if (!validateComplexity(password)) {
+                alert("密碼必須包含大小寫字母和數字");
+                return false;
+            }
+
+            const confirmPassword = document.getElementById("confirm-password").value;
+            if (password !== confirmPassword) {
+                alert("兩次輸入的密碼不一致");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>

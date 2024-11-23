@@ -1,0 +1,178 @@
+/* 主頁面的通用樣式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: linear-gradient(to right, #7B4397, #9f5fdb); /* 渐变背景颜色 */
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #7B4397;
+    color: white;
+}
+
+.top-bar ul {
+    list-style: none;
+    display: flex;
+}
+
+.top-bar ul li {
+    margin-right: 15px;
+}
+
+.top-bar ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #7B4397;
+}
+
+.logo a {
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-icons a {
+    color: white;
+    margin-right: 15px;
+    text-decoration: none;
+}
+
+.nav-icons a:hover {
+    text-decoration: underline;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* 自適應列數 */
+    gap: 20px; /* 每個格子的間距 */
+}
+
+.grid-item {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.grid-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.grid-item h3 {
+    margin: 10px 0 5px;
+}
+
+.grid-item p {
+    margin: 5px 0;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+}
+/* 登入和註冊頁面的表單樣式 */
+.form-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #7b4397;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #a4508b;
+}
+
+/* 密碼容器 - 使用 Flexbox */
+.password-container {
+    display: flex;
+    align-items: right;
+    position: relative;
+    border: 1px solid #ccc; /* 與輸入框一致的邊框 */
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* 密碼輸入框 */
+.password-container input[type="password"] {
+    flex: 1;
+    border: none; /* 去掉內部輸入框的邊框 */
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* 顯示/隱藏密碼按鈕 */
+.toggle-password-btn {
+    width: 55px; /* 設置按鈕的固定寬度 */
+    background-color: transparent;
+    border: none;
+    color: #007BFF;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 14px;
+    transition: background-color 0.3s ease; /* 添加過渡效果 */
+}
+
+/* 按鈕懸停效果 */
+.toggle-password-btn:hover {
+    background-color: #f0f0f0; /* 輕微變化的背景色，讓按鈕看起來可互動 */
+}
+
+p {
+    margin-top: 15px;
+}
