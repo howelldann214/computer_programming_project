@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品上傳頁面</title>
+    <link rel="stylesheet" href="product_upload.css">
+    <!-- 登入檢查 -->
+    <script src="../js/auth.js" defer></script>
+    <script src="../js/common.js" defer></script>
+    <script>
+        // 檢查是否已登入，未登入則跳轉到登入頁面
+        document.addEventListener('DOMContentLoaded', function () {
+            if (!checkLogin()) {
+                redirectToLogin();
+            }
+        });
+    </script>
+</head>
+<body>
+    <header></header>
+        <div class="top-bar">
+            <div class="logo">
+                <a href=""><img src="../material/icon-1.png" href="../main/main.html" alt="logo"></a>
+            </div>
+            <div class="top-right">
+                <ul>
+                    <li><a href="../main/main.html">回到中大購物網首頁</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="form-container">
+        <h1>商品上傳頁面</h1>
+        <form action="/upload_product" method="post" enctype="multipart/form-data"></form>
+        <div class="input-group">
+            <label for="productName">商品名稱:</label>
+            <input type="text" id="productName" name="productName" required>
+        </div>
+        <div class="input-group">
+            <label for="productDescription">商品敘述:</label>
+            <textarea id="productDescription" name="productDescription" required></textarea>
+        </div>
+        <div class="input-group">
+            <label for="productPrice">商品價格:</label>
+            <input type="number" id="productPrice" name="productPrice" required>
+        </div>
+        <div class="input-group">
+            <label for="productStock">商品庫存:</label>
+            <input type="number" id="productStock" name="productStock" min="1" required>
+        </div>
+        <div class="input-group">
+            <label for="productFirstImages">商品首張照片 :</label>
+            <input type="file" id="productFirstImages" name="productFirstImages" accept="image/*" required>
+        </div>        
+        <div class="input-group">
+            <label for="productImages">商品其他照片 (可上傳多張):</label>
+            <input type="file" id="productImages" name="productImages" accept="image/*" multiple required>
+        </div>
+        <div>
+            <button type="submit">預覽</button>
+        </div>
+    </form>
+    </div>
+    
+</body>
+</html>

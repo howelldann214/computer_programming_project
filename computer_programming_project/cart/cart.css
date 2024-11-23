@@ -1,0 +1,212 @@
+/* 主頁面的通用樣式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Header 部分 */
+header {
+    background: linear-gradient(to right, #7B4397, #9f5fdb); /* 渐变背景颜色 */
+}
+
+/* 頂部橫條容器 */
+.top-bar {
+    height: 84px; /* 控制橫條的高度 */
+    display: flex;
+    justify-content: space-between; /* Logo 在左，Login 和 Signup 在右 */
+    padding: 5px 20px; /* 控制上下內邊距，使橫條不會過高 */
+    background-color: #7B4397; /* 橫條背景顏色 */
+    color: white;
+}
+
+/* Logo 部分 */
+.logo img {
+    max-height: 70px; /* 控制 logo 的高度，根據需要調整 */
+    width: auto; /* 保持寬高比例 */
+}
+
+/* 右側的 Login 和 Signup 連結 */
+.top-right {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* 讓 Login 和 Signup 垂直排列 */
+    justify-content: space-between; /* Login 靠上，Signup 靠下 */
+    height: 100%; /* 高度充滿父容器 */
+}
+
+.top-right ul {
+    list-style: none; /* 去除列表項的預設小圓點 */
+    margin: 0;
+    padding: 0;
+    height: 100%; /* 高度充滿父容器 */
+}
+
+.top-right ul li {
+    margin-top: 5px;
+    margin-bottom: 20px; /* Login 和 Signup 之間的距離 */
+}
+
+.top-right ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: color 0.3s ease; /* 添加過渡效果 */
+}
+
+.top-right ul li a:hover {
+    color: #ff6347; /* 懸停時改變文字顏色 */
+}
+/* 購物車部分 */
+.cart {
+    margin: 20px auto;
+    width: 55%;
+}
+
+/* 購物車項目 */
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    height: 150px;
+    width: 100%;
+    padding: 10px 20px;
+}
+
+.cart-item img {
+    width: auto;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 10px;
+}
+
+/* 商品詳情部分 */
+.item-details {
+    width: 350px;
+    display: flex;
+    justify-content: flex-start; /* 讓名稱靠左 */
+    padding-left: 30px;
+}
+
+/* 商品名稱樣式 */
+.item-details h3 {
+    font-size: 22px;
+    margin-right: 20px; /* 與價格部分保持間距 */
+    white-space: nowrap; /* 防止商品名稱換行 */
+    overflow: hidden;
+    text-overflow: ellipsis; /* 超過部分用省略號顯示 */
+}
+
+/* 商品價格部分 */
+.item-prices {
+    flex: 1;
+    text-align: right; /* 價格右對齊 */
+    font-size: 20px;
+}
+
+/* 數量選擇部分 */
+.item-quantity {
+    display: flex;
+    align-items: center;
+    margin-right: 30px; /* 確保與總價部分保持一定距離 */
+    margin-left: 20%;
+}
+
+.quantity-btn {
+    background-color: #7B4397;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.quantity-btn:hover {
+    background-color: #9f5fdb;
+}
+
+.remove-btn {
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+    border-radius: 2px;
+}
+.quantity {
+    margin: 0 10px;
+    font-size: 18px;
+}
+
+/* 商品總價部分 */
+.item-total {
+    flex: 1;
+    padding-right: 20px;
+    text-align: right; /* 保證總價在最右側 */
+}
+
+.item-total h3 {
+    font-size: 22px;
+    color: #333;
+    margin: 0;
+}
+
+/* 總價部分 */
+.cart-total {
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    margin-right: 10px;  
+}
+
+.cart-total h2 {
+    padding-top: 5px;
+    font-size: 24px;
+    color: #333;
+}
+
+.original-word {
+    color: black; /* 原本的字樣，可以根據需要修改 */
+    font-size: 18px; /* 調整字體大小 */
+}
+
+.red-color {
+    color: red; /* 用紅色表示特定信息 */
+}
+
+.checkout {
+    text-align: right;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+/* 結帳按鈕 */
+.checkout-btn {
+    background-color: #7B4397;
+    color: white;
+    font-size: 16px;
+    height: 50px;
+    width: 100px;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+.checkout-btn:hover {
+    background-color: #9f5fdb;
+}

@@ -1,0 +1,219 @@
+/* 主頁面的通用樣式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Header 部分 */
+header {
+    background: linear-gradient(to right, #7B4397, #9f5fdb); /* 渐变背景颜色 */
+}
+
+/* 頂部橫條容器 */
+.top-bar {
+    height: 84px; /* 控制橫條的高度 */
+    display: flex;
+    justify-content: space-between; /* Logo 在左，Login 和 Signup 在右 */
+    padding: 5px 20px; /* 控制上下內邊距，使橫條不會過高 */
+    background-color: #7B4397; /* 橫條背景顏色 */
+    color: white;
+}
+
+/* Logo 部分 */
+.logo img {
+    max-height: 70px; /* 控制 logo 的高度，根據需要調整 */
+    width: auto; /* 保持寬高比例 */
+}
+
+/* 右側的 Login 和 Signup 連結 */
+.top-right {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* 讓 Login 和 Signup 垂直排列 */
+    justify-content: space-between; /* Login 靠上，Signup 靠下 */
+    height: 100%; /* 高度充滿父容器 */
+}
+
+.top-right ul {
+    list-style: none; /* 去除列表項的預設小圓點 */
+    margin: 0;
+    padding: 0;
+    height: 100%; /* 高度充滿父容器 */
+}
+
+.top-right ul li {
+    margin-top: 5px;
+    margin-bottom: 20px; /* Login 和 Signup 之間的距離 */
+}
+
+.top-right ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: color 0.3s ease; /* 添加過渡效果 */
+}
+
+.top-right ul li a:hover {
+    color: #ff6347; /* 懸停時改變文字顏色 */
+}
+
+/* Main Navigation */
+.main-nav {
+    display: flex;
+    align-items: center;
+    padding: 0 20px; /* 控制主導航的左右內邊距 */
+}
+
+.nav-icons a {
+    color: white;
+    margin-right: 15px;
+    text-decoration: none;
+}
+
+.nav-icons a:hover {
+    text-decoration: underline;
+}
+
+/* 商品容器 - 左右佈局 */
+.product-container {
+    display: flex;
+    max-width: 65%;
+    margin: 50px auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    gap: 30px;
+    align-items: stretch; /* 保持圖片和詳情部分高度一致 */
+}
+
+/* 商品圖片部分 */
+.product-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-image img {
+    max-width: 100%;
+    max-height: auto;
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    border-radius: 10px;
+}
+/* 商品詳細信息部分 */
+.product-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 讓內容均勻分佈 */
+    height: 100%;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    padding-left: 10px;
+    box-sizing: border-box;
+    padding-bottom: 7%;
+}
+
+/* 商品標題樣式 */
+.product-title {
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+/* 商品價格樣式 */
+.product-prices {
+    display: flex;
+    gap: 10px;
+    background-color: #F2F2F2;
+    border-radius: 5px;
+    align-items: center;
+    padding: 10px 2%;
+    margin-bottom: 30px;
+}
+
+.product-price {
+    font-size: 26px;
+    color: #ff2600;
+}
+
+/* 商品庫存信息 */
+.product-stock {
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+
+/* 商品描述部分 */
+.product-description {
+    margin-bottom: 30px;
+    padding-left: 20px;
+    font-size: 18px;
+}
+
+/* 購買部分 */
+.purchase-section {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding-right: 10%;
+    gap: 10px;
+    margin-top: 20px;
+    font-size: 22px;
+}
+
+/* 數量選擇框樣式 */
+.quantity-input,
+input[type="number"] {
+    font-weight: bold;
+    font-size: 18px;
+    height: 40px;
+    width: 80px;
+    background-color: #F2F2F2;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px;
+}
+
+/* 按鈕樣式 */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* 加入購物車按鈕樣式 */
+.cart-btn {
+    background-color: #f0ad4e;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.cart-btn:hover {
+    background-color: #ec971f;
+}
+
+/* 立即購買按鈕樣式 */
+.buy-now-btn {
+    background-color: #d9534f;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.buy-now-btn:hover {
+    background-color: #c9302c;
+}

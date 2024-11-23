@@ -5,57 +5,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>中大購物網</title>
     <link rel="stylesheet" href="style.css">
+    <script src="test.js"></script>
 </head>
 <body>
     <header>
         <div class="top-bar">
-            <div class="top-left">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                </ul>
+            <div class="logo">
+                <a href="../main/main.html"><img src="../material/icon-1.png"  alt="logo"></a>
             </div>
-            <div class="top-right">
-                <ul>
-                    <li><a href="#">Login</a></li>
-                </ul>
+            <div class="cart">
+                <a href="../cart/cart.html"><img src="../material/cart.png" alt="cart"></a>
+                <div class="top-right">
+                    <ul>
+                        <li><a href="../login/login.html">登入</a></li>
+                        <li><a href="../signup/signup.html">註冊</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <nav class="main-nav">
-            <div class="logo">
-                <a href="#">MyWebsite</a>
-            </div>
-
-            <div class="nav-icons">
-                <a href="#">Notifications</a>
-            </div>
-        </nav>
     </header>
+    
+    <!-- 商品預覽頁 -->
     <main>
         <section class="grid-container">
-            <div class="grid-item">
-                <img src="tutor1.jpg" alt="Tutor 1">
-                <h3>NAME 1 </h3>
-                <p>subject</p>
-                <p>Price</p>
-            </div>
+            <a href="../product/product.html" class="grid-link">
+                <div class="grid-item">
+                    <div class="image-container">
+                        <img src="https://img.pchome.com.tw/cs/items/DMBL53A900HVOMD/000001_1727236783.jpg" alt="Tutor 1">
+                    </div>
+                    <h3>NAME 1</h3>
+                    <h3 class="price">$</h3> 
+                </div>
+            </a>
+    
+            <a href="tutor2-details.html" class="grid-link">
+                <div class="grid-item">
+                    <div class="image-container">
+                        <img src="https://agirls.aottercdn.com/media/f22b4529-4b61-4316-a4ae-e8c7544a4ea8.jpg" alt="Tutor 2">
+                    </div>
+                    <h3>NAME 2</h3>
+                    <h3 class="price">$</h3> 
+                </div>
+            </a>
+    
+            <a href="tutor3-details.html" class="grid-link">
+                <div class="grid-item">
+                    <div class="image-container">
+                        <img src="tutor3.jpg" alt="Tutor 3">
+                    </div>
+                    <h3>NAME 3</h3>
+                    <h3 class="price">$</h3> 
+                </div>
+            </a>
+    
+            <a href="tutor4-details.html" class="grid-link">
+                <div class="grid-item">
+                    <div class="image-container">
+                        <img src="tutor4.jpg" alt="Tutor 4">
+                    </div>
+                    <h3>NAME 4</h3>
+                    <h3 class="price">$</h3> 
+                </div>
+            </a>
 
-            <div class="grid-item">
-                <img src="tutor2.jpg" alt="Tutor 2">
-                <h3>NAME 2 </h3>
-                <p>subject</p>
-                <p>Price</p>
-            </div>
-
-            <div class="grid-item">
-                <img src="tutor3.jpg" alt="Tutor 3">
-                <h3>NAME 3 </h3>
-                <p>subject</p>
-                <p>Price</p>
-            </div>
-
+            <a href="tutor5-details.html" class="grid-link">
+                <div class="grid-item">
+                    <div class="image-container">
+                        <img src="tutor5.jpg" alt="Tutor 5">
+                    </div>
+                    <h3>NAME 5</h3>
+                    <h3 class="price">$</h3> 
+                </div>
             <!-- 可以繼續添加更多卡片 -->
         </section>
     </main>
+    
     <footer>
         <p>&copy; Department computer network and programming project</p>
     </footer>

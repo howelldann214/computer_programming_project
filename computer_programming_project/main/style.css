@@ -10,46 +10,81 @@ body {
     background-color: #f4f4f4;
 }
 
+/* Header 部分 */
 header {
     background: linear-gradient(to right, #7B4397, #9f5fdb); /* 渐变背景颜色 */
 }
 
+/* 頂部橫條容器 */
 .top-bar {
+    height: 84px; /* 控制橫條的高度 */
     display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    background-color: #7B4397;
+    justify-content: space-between; /* Logo 在左，Login 和 Signup 在右 */
+    padding: 5px 20px; /* 控制上下內邊距，使橫條不會過高 */
+    background-color: #7B4397; /* 橫條背景顏色 */
     color: white;
 }
 
-.top-bar ul {
-    list-style: none;
+/* Logo 部分 */
+.logo img {
+    max-height: 70px; /* 控制 logo 的高度，根據需要調整 */
+    width: auto; /* 保持寬高比例 */
+}
+
+.cart {
     display: flex;
+    align-items: center;
+    padding-right: 5;
+}
+.cart img {
+    padding-right: 40px;
+    max-height: 40px; /* 控制購物車圖標的高度 */
+    width: auto; /* 保持寬高比例 */
+}
+.cart img:hover {
+    cursor: pointer;
+    transform: scale(1.2);
 }
 
-.top-bar ul li {
-    margin-right: 15px;
+/* 右側的 Login 和 Signup 連結 */
+.top-right {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* 讓 Login 和 Signup 垂直排列 */
+    justify-content: space-between; /* Login 靠上，Signup 靠下 */
+    height: 100%; /* 高度充滿父容器 */
 }
 
-.top-bar ul li a {
+.top-right ul {
+    list-style: none; /* 去除列表項的預設小圓點 */
+    margin: 0;
+    padding: 0;
+    height: 100%; /* 高度充滿父容器 */
+}
+
+.top-right ul li {
+    margin-top: 5px;
+    margin-bottom: 20px; /* Login 和 Signup 之間的距離 */
+}
+
+.top-right ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    padding: 5px 10px;
+    transition: color 0.3s ease; /* 添加過渡效果 */
 }
 
+.top-right ul li a:hover {
+    color: #ff6347; /* 懸停時改變文字顏色 */
+}
+
+/* Main Navigation */
 .main-nav {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 15px;
-    background-color: #7B4397;
-}
-
-.logo a {
-    font-size: 24px;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+    padding: 0 20px; /* 控制主導航的左右內邊距 */
 }
 
 .nav-icons a {
@@ -62,34 +97,84 @@ header {
     text-decoration: underline;
 }
 
+/* Grid 容器 */
 .grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* 自適應列數 */
-    gap: 20px; /* 每個格子的間距 */
+    display: flex; /* 使用 Flexbox 來排列卡片 */
+    flex-wrap: wrap; /* 允許卡片在需要時換行 */
+    justify-content: center; /* 讓卡片在水平方向上居中 */
+    gap: 20px; /* 每個卡片之間的間距 */
+    padding: 20px; /* 給容器添加一些內邊距 */
 }
 
+
+/* 整個卡片連結的樣式 */
+.grid-link {
+    text-decoration: none; /* 去除超連結的下劃線 */
+    color: inherit; /* 保持文字顏色與父容器一致 */
+    display: block; /* 將 <a> 設置為 block，讓它能包含整個卡片 */
+}
+
+/* 卡片的樣式 */
 .grid-item {
     background-color: white;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 464px; /* 固定卡片高度 */
+    width: 300px; /* 固定卡片高度 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+/* 正方形圖片容器 */
+.image-container {
+    width: 290px;  /* 固定寬度 */
+    height: 290px; /* 固定高度，確保是正方形 */
+    background-color: #ffffff; /* 修改為純白色背景 */
+    display: block; /* 保持容器為塊級元素 */
+    text-align: center; /* 讓內部圖片水平置中 */
+    position: relative; /* 設置相對定位，方便子元素對齊 */
+}
+
+
+/* 圖片樣式 */
+
 .grid-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
+    max-width: 100%; /* 確保圖片寬度不超過容器 */
+    max-height: 100%; /* 確保圖片高度不超過容器 */
+    object-fit: contain; /* 保持圖片不變形並且完整顯示 */
+    display: block; /* 確保不會有內部空隙 */
+    margin: auto; /* 確保圖片水平居中 */
+    position: absolute; /* 絕對定位，確保圖片水平和垂直方向上都可以自由調整 */
+    top: 50%; /* 垂直方向中心點 */
+    left: 50%; /* 水平方向中心點 */
+    transform: translate(-50%, -50%); /* 確保圖片在容器中居中 */
+}
+
+/* 懸停效果，讓卡片看起來有互動性 */
+.grid-link:hover .grid-item {
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 .grid-item h3 {
-    margin: 10px 0 5px;
+    margin: 15px 0 10px; /* 增加上下間距，使元素間距更協調 */
 }
 
 .grid-item p {
-    margin: 5px 0;
+    margin: 10px 0; /* 控制段落的間距 */
 }
 
+/* 設置價格的顏色為紅色 */
+.price {
+    color: red;
+    font-weight: bold; /* 可以選擇加粗字體以強調 */
+}
+
+/* Footer 部分 */
 footer {
     text-align: center;
     margin-top: 20px;

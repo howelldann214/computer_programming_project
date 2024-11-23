@@ -30,6 +30,7 @@ header {
     max-height: 70px; /* 控制 logo 的高度，根據需要調整 */
     width: auto; /* 保持寬高比例 */
 }
+
 /* 右側回到首頁 連結 */
 .top-right {
     margin: 0;
@@ -71,22 +72,23 @@ footer {
     text-align: center;
     margin-top: 20px;
 }
-
-/* 登入和註冊頁面的表單樣式 */
+/* 商品輸入格的表單樣式 */
+label {
+    font-size: 20px;
+}
 .form-container {
     background-color: white;
-    padding: 40px;
+    padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 400px; /* 限制表單最大寬度 */
-    margin: 50px auto;
+    width: 35%;
+    margin: 50px 0 0 32.5%;
     text-align: center;
 }
 
 .input-group {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     text-align: left;
-    width: 100%; /* 輸入框保持父容器寬度，滿版效果 */
 }
 
 .input-group label {
@@ -97,78 +99,41 @@ footer {
 
 .input-group input {
     width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc; /* 使用原來的邊框顏色和厚度 */
+    padding: 10px;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    box-sizing: border-box;
 }
 
-/* 密碼容器 - 使用 Flexbox */
-.password-container {
-    display: flex;
-    align-items: center;
-    border: 1px solid #ccc; /* 與輸入框一致的邊框 */
-    border-radius: 5px;
-    overflow: hidden;
-    width: 100%; /* 與輸入框保持一致的寬度 */
-    box-sizing: border-box;
+input {
+    font-size: 18px; /* 調整字體大小為 18px，根據需要改變這個值 */
+    padding: 10px; /* 可以調整內邊距讓輸入框顯得更舒適 */
 }
 
-/* 密碼輸入框 */
-.password-container input[type="password"] {
-    flex: 1; /* 讓輸入框佔據容器的大部分空間 */
-    border: none; /* 去掉內部輸入框的邊框 */
-    padding: 12px;
-    box-sizing: border-box;
-}
-
-/* 顯示/隱藏密碼按鈕 */
-.toggle-password-btn {
-    background-color: transparent;
-    border: none;
-    color: #007BFF;
-    cursor: pointer;
-    height: 40px; /* 設置固定高度與輸入框一致 */
-    padding: 0 10px; /* 減少按鈕的左右內邊距，使其更緊湊 */
+textarea {
     font-size: 14px;
-    transition: background-color 0.3s ease; /* 添加過渡效果 */
 }
 
-/* 按鈕懸停效果 */
-.toggle-password-btn:hover {
-    background-color: #f0f0f0; /* 輕微變化的背景色，讓按鈕看起來可互動 */
-}
 
-/* 登入和註冊按鈕樣式 */
-.login-btn, .register-btn {
-    display: inline-block; /* 設置按鈕為行內塊級元素，使其自然根據內容適應大小 */
-    width: 100%; /* 保持按鈕寬度填滿父容器 */
-    padding: 12px;
+textarea {
+    width: 100%; /* 讓輸入框寬度填滿父容器 */
+    height: 300px; /* 具體的高度，可以根據需要設置 */
+    padding: 10px; /* 增加內邊距，讓輸入感覺更舒適 */
+    font-size: 16px; /* 字體大小 */
+    border-radius: 5px; /* 圓角效果 */
+    border: 1px solid #ccc; /* 邊框樣式 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 輕微的陰影效果 */
+}
+button {
+    width: 100%;
+    padding: 10px;
     background-color: #7b4397;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    margin-top: 20px; /* 增加上方間距，使按鈕與輸入框分開 */
-    text-align: center;
-    box-sizing: border-box;
 }
 
-/* 登入和註冊按鈕懸停效果 */
-.login-btn:hover, .register-btn:hover {
-    background-color: #a4508b; /* 添加懸停效果 */
-}
-
-/* 確保登入按鈕容器保持中心 */
-.form-container form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-
-p {
-    margin-top: 15px;
-    font-size: 14px;
+button:hover {
+    background-color: #a4508b;
 }

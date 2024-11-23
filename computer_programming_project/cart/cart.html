@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>購物車</title>
+    <link rel="stylesheet" href="cart.css">
+    <!-- 登入檢查 -->
+    <script src="../js/auth.js" defer></script>
+    <script src="../js/common.js" defer></script>
+    <script>
+        // 檢查是否已登入，未登入則跳轉到登入頁面
+        document.addEventListener('DOMContentLoaded', function () {
+            if (!checkLogin()) {
+                redirectToLogin();
+            }
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="logo">
+                <a href=""><img src="../material/icon-1.png" href="../main/main.html" alt="logo"></a>
+            </div>
+            <div class="top-right">
+                <ul>
+                    <li><a href="../login/login.html">登入</a></li>
+                    <li><a href="../signup/signup.html">註冊</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="cart">
+            <div class="cart-item">
+                <img src="../material/16884380ed245f0dfa2bb85e17cca03c@resize_w450_nl.webp" alt="Product 1">
+                <div class="item-details">
+                    <h3>商品名稱 1 </h3>
+                </div>
+                <div class="item-prices">
+                    <p>$100</p>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-btn">-</button>
+                    <span class="quantity">1</span>
+                    <button class="quantity-btn">+</button>
+                    <button class="remove-btn">移除</button>
+                </div>
+                <div class="item-total">
+                    <h3>$100</h3>
+                </div>
+            </div>
+        <div class="cart-total">
+            <h2>
+                總價 <span class="original-word">(3個商品)</span>：
+                <span class="red-color">$$$</span>
+            </h2>
+            
+            <button class="checkout-btn">結帳</button>
+        </div>
+    </main>
+</body>

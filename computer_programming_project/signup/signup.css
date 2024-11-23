@@ -10,84 +10,62 @@ body {
     background-color: #f4f4f4;
 }
 
+/* Header 部分 */
 header {
     background: linear-gradient(to right, #7B4397, #9f5fdb); /* 渐变背景颜色 */
 }
 
+/* 頂部橫條容器 */
 .top-bar {
+    height: 84px; /* 控制橫條的高度 */
     display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    background-color: #7B4397;
+    justify-content: space-between; /* Logo 在左，Login 和 Signup 在右 */
+    padding: 5px 20px; /* 控制上下內邊距，使橫條不會過高 */
+    background-color: #7B4397; /* 橫條背景顏色 */
     color: white;
 }
 
-.top-bar ul {
-    list-style: none;
+/* Logo 部分 */
+.logo img {
+    max-height: 70px; /* 控制 logo 的高度，根據需要調整 */
+    width: auto; /* 保持寬高比例 */
+}
+
+/* 右側回到首頁 連結 */
+.top-right {
+    margin: 0;
+    padding: 0;
     display: flex;
+    flex-direction: column; /* 讓 Login 和 Signup 垂直排列 */
+    justify-content: center; /* 讓 Login 和 Signup 垂直置中 */
+    height: 100%; /* 高度充滿父容器 */
 }
 
-.top-bar ul li {
-    margin-right: 15px;
+.top-right ul {
+    list-style: none; /* 去除列表項的預設小圓點 */
+    margin: 0;
+    padding: 0;
+    height: 100%; /* 高度充滿父容器 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 讓列表項垂直置中 */
 }
 
-.top-bar ul li a {
+.top-right ul li {
+    margin-top: 5px;
+    margin-bottom: 20px; /* Login 和 Signup 之間的距離 */
+}
+
+.top-right ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    padding: 5px 10px;
+    transition: color 0.3s ease; /* 添加過渡效果 */
 }
 
-.main-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    background-color: #7B4397;
-}
-
-.logo a {
-    font-size: 24px;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.nav-icons a {
-    color: white;
-    margin-right: 15px;
-    text-decoration: none;
-}
-
-.nav-icons a:hover {
-    text-decoration: underline;
-}
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* 自適應列數 */
-    gap: 20px; /* 每個格子的間距 */
-}
-
-.grid-item {
-    background-color: white;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.grid-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-}
-
-.grid-item h3 {
-    margin: 10px 0 5px;
-}
-
-.grid-item p {
-    margin: 5px 0;
+.top-right ul li a:hover {
+    color: #ff6347; /* 懸停時改變文字顏色 */
 }
 
 footer {

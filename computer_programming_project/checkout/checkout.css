@@ -1,0 +1,239 @@
+/* 主頁面的通用樣式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Header 部分 */
+header {
+    background: linear-gradient(to right, #7B4397, #9f5fdb); /* 渐变背景颜色 */
+}
+
+/* 頂部橫條容器 */
+.top-bar {
+    height: 84px; /* 控制橫條的高度 */
+    display: flex;
+    justify-content: space-between; /* Logo 在左，Login 和 Signup 在右 */
+    padding: 5px 20px; /* 控制上下內邊距，使橫條不會過高 */
+    background-color: #7B4397; /* 橫條背景顏色 */
+    color: white;
+}
+
+/* Logo 部分 */
+.logo img {
+    max-height: 70px; /* 控制 logo 的高度，根據需要調整 */
+    width: auto; /* 保持寬高比例 */
+}
+
+/* 右側的 Login 和 Signup 連結 */
+.top-right {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* 讓 Login 和 Signup 垂直排列 */
+    justify-content: space-between; /* Login 靠上，Signup 靠下 */
+    height: 100%; /* 高度充滿父容器 */
+}
+
+.top-right ul {
+    list-style: none; /* 去除列表項的預設小圓點 */
+    margin: 0;
+    padding: 0;
+    height: 100%; /* 高度充滿父容器 */
+}
+
+.top-right ul li {
+    margin-top: 5px;
+    margin-bottom: 20px; /* Login 和 Signup 之間的距離 */
+}
+
+.top-right ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: color 0.3s ease; /* 添加過渡效果 */
+}
+
+.top-right ul li a:hover {
+    color: #ff6347; /* 懸停時改變文字顏色 */
+}
+/* Checkout 部分 */
+.checkout {
+    width: 75%;
+    margin: 40px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.order {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.order thead th {
+    text-align: center;
+    padding: 10px;
+    border-bottom: 2px solid #ddd;
+    font-weight: bold;
+}
+
+/* 將第一列商品名稱部分左對齊 */
+.order thead th:first-child {
+    text-align: left;
+}
+
+.order tbody td {
+    padding: 15px 10px;
+    border-bottom: 1px solid #ddd;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.order thead td:first-child {
+    text-align: left;
+}
+
+.item-details {
+    display: flex;
+    align-items: center;
+    gap: 15px;  /* 調整圖片與商品名稱之間的間距 */
+    text-align: left;  /* 將商品名稱部分置左 */
+}
+
+.item-details img {
+    width: 60px;  /* 確保圖片是小的正方形 */
+    height: 60px;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    border-radius: 5px;
+    border: 1px solid #ddd;  /* 添加邊框 */
+}
+
+.item-title {
+    font-weight: bold;
+}
+
+.item-options {
+    color: #666;
+    font-size: 14px;
+}
+
+/* 單價、數量、總價部分的樣式 */
+.order tbody td:nth-child(2),
+.order tbody td:nth-child(3),
+.order tbody td:nth-child(4) {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* 總價部分 */
+.total-row {
+    padding-right: 10px;
+    text-align: right; /* 文字向右對齊 */
+    font-size: 18px;
+}
+
+.total-price{
+    text-align: center;
+    font-size: 24px;
+    color: #ff2600;
+}
+
+.transport{
+    width: 75%;
+    margin: 40px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.transport-method {
+    margin-top: 10px;
+}
+
+.address-input,
+.store-input {
+    margin: 20px auto; /* 调整地址和便利商店选择容器之间的距离 */
+}
+
+/* 地址和便利商店选择容器的样式 */
+.address-input label,
+.store-input label {
+    font-size: 16px; /* 设置标签文字大小 */
+}
+
+.address-input input,
+.store-input input,
+.store-input select {
+    font-size: 16px; /* 设置输入框和下拉菜单文字大小 */
+    padding: 4px; /* 可选，增加输入框内边距 */
+}
+
+.payment {
+    width: 75%;
+    margin: 40px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.method-btn {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+    font-size: 18px;
+}
+
+.method-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.method-btn.selected {
+    background-color: #7B4397; /* 按钮被选中时的背景颜色 */
+    color: white;
+    border-color: #7B4397;
+}
+.payment-method{
+    margin-top:10px;
+}
+
+.pay {
+    width: 75%;
+    margin: 40px auto;
+    text-align: right;
+    padding-right: 5px;
+}
+
+.pay-btn {
+    background-color: #7B4397;
+    color: white;
+    font-size: 16px;
+    height: 50px;
+    width: 100px;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+.pay-btn:hover {
+    background-color: #9f5fdb;
+}

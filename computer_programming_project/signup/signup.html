@@ -10,22 +10,15 @@
 <body>
     <header>
         <div class="top-bar">
-            <div class="top-left">
+            <div class="logo">
+                <a href=""><img src="../material/icon-1.png" href="../main/main.html" alt="logo"></a>
+            </div>
+            <div class="top-right">
                 <ul>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="../main/main.html">回到中大購物網首頁</a></li>
                 </ul>
             </div>
         </div>
-
-        <nav class="main-nav">
-            <div class="logo">
-                <a href="#">MyWebsite</a>
-            </div>
-
-            <div class="nav-icons">
-                <a href="#">Notifications</a>
-            </div>
-        </nav>
     </header>
     <div class="form-container">
         <h2>使用者註冊</h2><br>
@@ -58,7 +51,7 @@
         </form>
     </div>
     <script>
-        // 使用 validate.js 中的函數
+        // 使用 validate.js 中的函數來檢查密碼的長度和複雜度
         function validateForm() {
             const password = document.getElementById("password").value;
 
