@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const username = localStorage.getItem('username');
         topRight.innerHTML = `
             <ul>
-                <li><span>歡迎, ${username}</span></li>
+                <li><span>${username}</span></li>
                 <li><a href="#" onclick="logout()">登出</a></li>
             </ul>
         `;
