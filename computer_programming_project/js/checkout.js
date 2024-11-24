@@ -9,14 +9,14 @@ document.addEventListener('DOMContentLoaded', function () {
         const row = document.createElement('tr');
         row.innerHTML = `
             <td class="item-details">
-                <img src="https://example.com/product.jpg" alt="${item.productId}">
+                <img src="${item.imageUrl}" alt="${item.productId}">
                 <div>
-                    <p class="item-title">${item.productId}</p>
+                    <p class="item-title">${item.productName}</p> <!-- 顯示商品名稱 -->
                 </div>
             </td>
-            <td>$${item.price}</td>
+            <td>$${Math.round(item.price)}</td> <!-- 顯示價格，四捨五入為整數 -->
             <td>${item.quantity}</td>
-            <td>$${(item.price * item.quantity).toFixed(2)}</td>
+            <td>$${Math.round(item.price * item.quantity)}</td> <!-- 顯示總價，四捨五入為整數 -->
         `;
         orderTableBody.appendChild(row);
 
@@ -26,5 +26,5 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // 顯示總價
     const totalPriceElement = document.querySelector('.total-price');
-    totalPriceElement.textContent = `$${totalPrice.toFixed(2)}`;
+    totalPriceElement.textContent = `$${Math.round(totalPrice)}`; // 四捨五入為整數
 });

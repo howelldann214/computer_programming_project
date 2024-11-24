@@ -1,10 +1,16 @@
-// 模擬讀取 productSelect 的商品資料
+document.addEventListener('DOMContentLoaded', function () {
+    loadProductsFromLocalStorage();  // 從 localStorage 讀取並顯示商品
+});
+
+// 從 localStorage 讀取商品資料並顯示
 function loadProductsFromLocalStorage() {
-    const products = JSON.parse(localStorage.getItem('productSelect')) || [];
     const productContainer = document.getElementById('product-container');
 
     // 清空目前的格子容器
     productContainer.innerHTML = '';
+
+    // 從 localStorage 讀取商品資料
+    const products = JSON.parse(localStorage.getItem('productData')) || [];  // 使用 'productData' 鍵
 
     // 遍歷商品資料並創建商品格子
     products.forEach(product => {
@@ -28,38 +34,20 @@ function loadProductsFromLocalStorage() {
     });
 }
 
-// 按鈕點擊事件，模擬儲存商品資料
-function onButtonClick() {
-    saveProductsToLocalStorage();
-}
-
-// 儲存商品資料到 localStorage
-function saveProductsToLocalStorage() {
-    const products = [];
-
-    for (let i = 1; i <= 5; i++) {
-        const productInfo = getProductInfoFromFile(`C:\\Users\\howel\\iCloudDrive\\code\\computer_programming_project\\material\\Product\\product${i}.txt`);
-        
-        const product = {
-            productId: `product${i}`,
-            productName: productInfo.productName,
-            price: productInfo.productPrice,
-            description: productInfo.productDescription,
-            imageUrl: productInfo.imageUrl,
-            stock: 10 * i,  // 庫存量：分別為 10, 20, 30, 40, 50
-        };
-
-        products.push(product);
-    }
-
-    // 儲存商品資料到 localStorage
-    localStorage.setItem('productSelect', JSON.stringify(products));
-    alert('商品資料已儲存至 LocalStorage');
-    loadProductsFromLocalStorage();  // 儲存後重新載入商品資料
-}
-
 
 // 頁面加載後自動載入商品資料
 window.onload = function() {
     loadProductsFromLocalStorage();
 };
+
+function deleteButtonClick(){
+    localStorage.removeItem('productSelect');
+    localStorage.removeItem('cart');
+    localStorage.removeItem('username');
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('productData');
+    localStorage.removeItem('password');
+    localStorage.removeItem('products');
+    alert('資料已刪除');
+    
+}

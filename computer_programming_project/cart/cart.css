@@ -170,6 +170,11 @@ header {
     margin: 0;
 }
 
+.cart-total-space {
+    margin: 20px auto;
+    width: 55%;  
+}
+
 /* 總價部分 */
 .cart-total {
     text-align: right;

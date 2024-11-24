@@ -31,6 +31,21 @@ header {
     width: auto; /* 保持寬高比例 */
 }
 
+.cart {
+    display: flex;
+    align-items: center;
+    padding-right: 5;
+}
+.cart img {
+    padding-right: 40px;
+    max-height: 40px; /* 控制購物車圖標的高度 */
+    width: auto; /* 保持寬高比例 */
+}
+.cart img:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
 /* 右側的 Login 和 Signup 連結 */
 .top-right {
     margin: 0;
