@@ -67,11 +67,6 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        if (paymentInput.value === 'cash' && !branchInput.value) {
-            alert('請填寫分店！');
-            return;
-        }
-
         // 從 localStorage 讀取購物車資料和 productData
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
         const productData = JSON.parse(localStorage.getItem('productData')) || [];
@@ -97,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
         localStorage.removeItem('ProductSelect');
 
         // 跳轉回主頁面
-        window.location.href = '../main/main.html';
+        window.location.href = '../templates/main.html';
     });
 
 });

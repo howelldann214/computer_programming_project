@@ -4,7 +4,7 @@
 function logout() {
     localStorage.removeItem('isLoggedIn');
     localStorage.removeItem('username');
-    window.location.href = '../login/login.html';
+    window.location.href = '../templates/login.html';
 }
 
 // 檢查是否已登入
@@ -15,7 +15,7 @@ function checkLogin() {
 // 未登入時，跳轉到登入頁面並顯示提示
 function redirectToLogin() {
     alert('請先登入');
-    window.location.href = '../login/login.html';
+    window.location.href = '../templates/login.html';
 }
 
 // 頁面載入後檢查登入狀態

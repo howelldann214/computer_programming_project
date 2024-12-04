@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', function () {
         // 未登入，顯示登入和註冊按鈕
         topRight.innerHTML = `
             <ul>
-                <li><a href="../login/login.html">登入</a></li>
-                <li><a href="../signup/signup.html">註冊</a></li>
+                <li><a href="../templates/login.html">登入</a></li>
+                <li><a href="../templates/signup.html">註冊</a></li>
             </ul>
         `;
     }
@@ -28,5 +28,5 @@ document.addEventListener('DOMContentLoaded', function () {
 function logout() {
     localStorage.removeItem('isLoggedIn');
     localStorage.removeItem('username');
-    window.location.href = '../login/login.html';
+    window.location.href = '../templates/login.html';
 }

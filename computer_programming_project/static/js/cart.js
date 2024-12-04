@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (checkoutBtn) {
         checkoutBtn.addEventListener('click', function () {
             saveCartToCheckout(); // 儲存購物車資料到 cart，然後跳轉到結帳頁面
-            window.location.href = '../checkout/checkout.html'; // 跳轉到結帳頁面
+            window.location.href = '../templates/checkout.html'; // 跳轉到結帳頁面
         });
     }
 });

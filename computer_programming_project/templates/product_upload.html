@@ -4,29 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>商品上傳頁面</title>
-    <link rel="stylesheet" href="product_upload.css">
+    <link rel="stylesheet" href="../static/css/product_upload.css">
     <!-- 登入檢查 -->
-    <script src="../js/auth.js" defer></script>
-    <script src="../js/common.js" defer></script>
-    <script>
-        // 檢查是否已登入，未登入則跳轉到登入頁面
-        document.addEventListener('DOMContentLoaded', function () {
-            if (!checkLogin()) {
-                redirectToLogin();
-            }
-        });
-    </script>
+    <script src="../static/js/auth.js" defer></script>
+    <script src="../static/js/common.js" defer></script>
 </head>
 <body>
-    <header></header>
+    <header>
         <div class="top-bar">
             <div class="logo">
-                <img src="../material/icon-1.png" alt="logo">
+                <a href="../templates/main.html"><img src="../static/icons/icon-1.png" alt="logo"></a>
             </div>
-            <div class="top-right">
-                <ul>
-                    <li><a href="../main/main.html">回到中大購物網首頁</a></li>
-                </ul>
+            <div class="cart">
+                <a href="../templates/cart.html"><img src="../static/icons/cart.png" alt="cart"></a>
+                <div class="top-right">
+                    <!-- 這裡會由 JavaScript 更新 -->
+                </div>
             </div>
         </div>
     </header>

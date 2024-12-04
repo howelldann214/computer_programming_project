@@ -42,7 +42,7 @@ function handleSignup(event) {
     alert('註冊成功！');
 
     // 跳轉到 login.html
-    window.location.href = '../login/login.html';
+    window.location.href = '../templates/login.html';
 }
 
 // 綁定表單提交事件

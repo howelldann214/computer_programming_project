@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
             localStorage.setItem('ProductSelect', JSON.stringify(cart));
 
             alert('商品已加入購物車！');
-            window.location.href = '../main/main.html'; // 立即跳轉到結帳頁面
+            window.location.href = '../templates/main.html'; // 立即跳轉回到主頁面
         });
 
         // 設定 "立即購買" 按鈕的事件
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             localStorage.setItem('ProductSelect', JSON.stringify([productSelect]));
 
-            window.location.href = '../cart/cart.html'; // 立即跳轉到結帳頁面
+            window.location.href = '../templates/cart.html'; // 立即跳轉到結帳頁面
         });
     } else {
         alert('商品未找到！');

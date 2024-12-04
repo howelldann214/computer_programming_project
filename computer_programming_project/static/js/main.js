@@ -15,7 +15,7 @@ function loadProductsFromLocalStorage() {
     // 遍歷商品資料並創建商品格子
     products.forEach(product => {
         const productItem = document.createElement('a');
-        productItem.href = `../product/product.html?id=${product.productId}`;  // 連結到商品詳情頁
+        productItem.href = `../templates/product.html?id=${product.productId}`;  // 連結到商品詳情頁
         productItem.classList.add('grid-link');
 
         const gridItem = document.createElement('div');

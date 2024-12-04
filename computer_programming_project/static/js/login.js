@@ -24,7 +24,7 @@ function loginUser() {
         alert('登入成功！歡迎 ' + username);
 
         // 跳轉到主頁面
-        window.location.href = '../main/main.html'; // 根據實際需要調整跳轉頁面
+        window.location.href = '../templates/main.html'; // 根據實際需要調整跳轉頁面
     } else {
         // 登入失敗
         alert('登入失敗，請檢查帳號或密碼');
