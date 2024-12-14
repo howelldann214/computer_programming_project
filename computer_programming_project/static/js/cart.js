@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (checkoutBtn) {
         checkoutBtn.addEventListener('click', function () {
             saveCartToCheckout(); // 儲存購物車資料到 cart，然後跳轉到結帳頁面
-            window.location.href = '../templates/checkout.html'; // 跳轉到結帳頁面
+            window.location.href = '/checkout'; // 跳轉到結帳頁面
         });
     }
 });
@@ -45,12 +45,14 @@ function handleQuantityChange() {
 
     // 更新單個商品總價
     updateItemTotal(this, quantity);
+    
     // 儲存更新後的購物車資料
     localStorage.setItem('ProductSelect', JSON.stringify(cart));
     
     // 更新整體購物車總價
-    updateCartTotal(); 
+    updateCartTotal();
 }
+
 
 // 處理移除商品按鈕的點擊事件
 function handleRemoveItem() {

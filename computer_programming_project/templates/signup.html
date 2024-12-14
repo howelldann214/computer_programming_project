@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>中大購物網-註冊頁面</title>
     <link rel="stylesheet" href="../static/css/signup.css">
+    <script src="../static/js/signup.js" defer></script>
 </head>
 <body>
     <header>
         <div class="top-bar">
             <div class="logo">
-                <a href="../templates/main.html"><img src="../static/icons/icon-1.png" alt="logo"></a>
+                <a href="{{ url_for('index') }}"><img src="../static/icons/icon-1.png" alt="logo"></a>
             </div>
             <div class="top-right">
                 <ul>
-                    <li><a href="../templates/main.html">回到中大購物網首頁</a></li>
+                    <li><a href="{{ url_for('index') }}">回到中大購物網首頁</a></li>
                 </ul>
             </div>
         </div>
@@ -27,7 +28,7 @@
                 <label for="username">使用者名稱:</label>
                 <input type="text" id="username" name="username" required>
             </div>
-            
+
             <!--密碼-->
             <div class="input-group password-group">
                 <label for="password">密碼:</label>
@@ -46,9 +47,8 @@
             </div>
             <!--註冊-->
             <button type="submit">註冊</button>
-            <p>已經有帳號了嗎？ <a href="../templates/login.html">按這裡登入</a></p>
+            <p>已經有帳號了嗎？ <a href="{{ url_for('login_page') }}">按這裡登入</a></p>
         </form>
     </div>
-    <script src="../static/js/signup.js"></script>
 </body>
 </html>

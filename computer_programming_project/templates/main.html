@@ -13,16 +13,16 @@
     <header>
         <div class="top-bar">
             <div class="logo">
-                <a href="../templates/main.html"><img src="../static/icons/icon-1.png" alt="logo"></a>
+                <a href="{{ url_for('index') }}"><img src="../static/icons/icon-1.png" alt="logo"></a>
             </div>
             <div class="cart">
-                <a href="../templates/cart.html"><img src="../static/icons/cart.png" alt="cart"></a>
+                <a href="{{ url_for('cart') }}"><img src="../static/icons/cart.png" alt="cart"></a>
                 <div class="top-right">
                     <!-- 這裡會由 JavaScript 更新 -->
                 </div>
             </div>
         </div>
-    </header>
+    </header>    
 
     <!-- 商品預覽頁 -->
     <main>
@@ -33,8 +33,6 @@
 
     <footer>
         <p>&copy; Department computer network and programming project</p>
-        <button onclick="onButtonClick()">儲存商品資料</button> <!-- 儲存商品資料的按鈕 -->
-        <button onclick="deleteButtonClick()">刪除前端資料</button> <!-- 刪除前端資料的按鈕 -->
     </footer>
 </body>
 </html>

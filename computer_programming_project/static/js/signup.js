@@ -1,7 +1,5 @@
 // signup.js
 
-let users = [];
-
 // 註冊表單提交的處理函式
 function handleSignup(event) {
     event.preventDefault(); // 防止表單自動提交，讓我們手動控制
@@ -34,15 +32,30 @@ function handleSignup(event) {
         return;
     }
 
-    // 儲存註冊資料到 localStorage
-    localStorage.setItem('username', username);
-    localStorage.setItem('password', password);
-
-    // 顯示註冊成功訊息
-    alert('註冊成功！');
-
-    // 跳轉到 login.html
-    window.location.href = '../templates/login.html';
+    // 傳送註冊資料給後端
+    fetch('/register', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            username: username,
+            password: password,
+        }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.message === "Registration successful") {
+            alert('註冊成功！');
+            window.location.href = '/login';  // 跳轉到登入頁
+        } else {
+            alert(data.error);  // 顯示錯誤訊息
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('註冊失敗');
+    });
 }
 
 // 綁定表單提交事件
