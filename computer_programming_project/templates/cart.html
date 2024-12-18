@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>購物車</title>
     <link rel="stylesheet" href="../static/css/cart.css">
-    <!-- 登入檢查 -->
     <script src="../static/js/cart.js" defer></script>
-    <script src="../static/js/auth.js" defer></script>
 </head>
 <body>
     <header>
@@ -15,14 +13,11 @@
             <div class="logo">
                 <a href="{{ url_for('index') }}"><img src="../static/icons/icon-1.png" alt="logo"></a>
             </div>
-            <div class="top-right">
-                
-            </div>
         </div>
     </header>
     <main>
         <div class="cart">
-            <!-- 商品項目將由 JavaScript 動態生成並顯示在這裡 -->
+            <!-- 購物車項目將由 JavaScript 動態生成 -->
         </div>
         <div class="cart-total-space">
             <div class="cart-total">
@@ -35,3 +30,4 @@
         </div>
     </main>
 </body>
+</html>

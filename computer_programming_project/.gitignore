@@ -1,0 +1,14 @@
+/.vscode/
+/C++/
+/Ututorial/
+/computerprogramming/
+# 忽略所有除了 computer_programming_project 資料夾內的檔案
+# 忽略 C++ 目錄下的 test.cpp 和 test.exe
+C++/test.cpp
+C++/test.exe
+# 忽略 Ututorial 資料夾
+Ututorial/project
+# 忽略 computerprogramming 資料夾下的所有檔案
+computerprogramming/*
+# 保留 computer_programming_project 內的檔案
+!computer_programming_project/*

@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>商品頁</title>
+    <title>{{ product.product_name }}</title>
     <link rel="stylesheet" href="../static/css/product.css">
-    <script src="../static/js/common.js" defer></script> <!-- 這裡引入 common.js -->
 </head>
 <body>
     <header>
@@ -14,10 +13,7 @@
                 <a href="{{ url_for('index') }}"><img src="../static/icons/icon-1.png" alt="logo"></a>
             </div>
             <div class="cart">
-                <a href="{{ url_for('cart') }}"><img src="../static/icons/cart.png" alt="cart"></a>
-                <div class="top-right">
-                    <!-- 這裡會由 JavaScript 更新 -->
-                </div>
+                <a href="{{ url_for('cart_page') }}"><img src="../static/icons/cart.png" alt="cart"></a>
             </div>
         </div>
     </header>
@@ -26,27 +22,26 @@
         <div class="product-container">
             <!-- 左邊圖片 -->
             <div class="product-image">
-                <img src="" alt="商品圖片" id="product-image">
+                <img src="{{ product.product_first_image }}" alt="{{ product.product_name }}" id="product-image">
             </div>
 
             <!-- 右邊商品詳情 -->
             <div class="product-details">
                 <div class="product-info">
-                    <h1 class="product-title" id="product-title">商品名稱示例</h1>
+                    <h1 class="product-title" id="product-title">{{ product.product_name }}</h1>
                     <div class="product-prices">
-                        <b><p class="product-price" id="product-price">$199</p></b>
+                        <b><p class="product-price" id="product-price">${{ product.product_prices | int }}</p></b>
                     </div>
-                    <p class="product-stock" id="product-stock">庫存：10 件</p>
+                    <p class="product-stock" id="product-stock">庫存：{{ product.product_in_stock }} 件</p>
                     <div class="product-description">
                         <ul id="product-description">
-                            <li>這段文字將從後端獲取，請稍後更新。</li>
+                            <li>{{ product.product_infor }}</li>
                         </ul>
                     </div>
                 </div>
-                <script src="../static/js/product.js"></script> <!-- 這裡引入 product.js -->
                 <div class="purchase-section">
                     <div class="quantity-label">
-                        <input type="number" id="quantity" name="quantity" min="1" max="1000" value="1" class="quantity-input">
+                        <input type="number" id="quantity" name="quantity" min="1" max="{{ product.product_in_stock }}" value="1" class="quantity-input">
                     </div>
                     <button class="cart-btn">加入購物車</button>
                     <button class="buy-now-btn">立即購買</button>
@@ -55,6 +50,6 @@
         </div>
     </main>
 
-    
+    <script src="../static/js/product.js"></script>
 </body>
 </html>

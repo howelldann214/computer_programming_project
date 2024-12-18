@@ -1,65 +1,34 @@
-// signup.js
-
-// 註冊表單提交的處理函式
-function handleSignup(event) {
-    event.preventDefault(); // 防止表單自動提交，讓我們手動控制
-
-    // 取得表單資料
+document.getElementById('signupForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
-    const confirmPassword = document.getElementById('confirm-password').value;
 
-    // 簡單驗證（可依需求擴充）
-    if (!username || !password || !confirmPassword) {
-        alert('請填寫完整的註冊資料');
-        return;
-    }
-
-    // 驗證密碼長度和複雜度
-    if (!validateLength(password)) {
-        alert("密碼需至少包含 8 位字符");
-        return;
-    }
-
-    if (!validateComplexity(password)) {
-        alert("密碼必須包含大小寫字母和數字");
-        return;
-    }
-
-    // 密碼確認
-    if (password !== confirmPassword) {
-        alert('密碼不一致，請重新確認');
-        return;
-    }
-
-    // 傳送註冊資料給後端
-    fetch('/register', {
+    const response = await fetch('/register', {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            username: username,
-            password: password,
-        }),
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.message === "Registration successful") {
-            alert('註冊成功！');
-            window.location.href = '/login';  // 跳轉到登入頁
-        } else {
-            alert(data.error);  // 顯示錯誤訊息
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        alert('註冊失敗');
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, password }),
     });
-}
 
-// 綁定表單提交事件
-document.getElementById('signupForm').addEventListener('submit', handleSignup);
+    const data = await response.json();
+    if (data.message === "Registration successful") {
+        alert('註冊成功！');
+        window.location.href = '/login';
+    } else {
+        alert(data.error || '註冊失敗');
+    }
+});
+
+function togglePassword() {
+    const passwordField = document.getElementById('password');
+    const toggleButton = document.getElementById('toggle-password');
+    if (passwordField.type === 'password') {
+        passwordField.type = 'text';
+        toggleButton.textContent = '隱藏';
+    } else {
+        passwordField.type = 'password';
+        toggleButton.textContent = '顯示';
+    }
+}
 
 // 密碼長度驗證
 function validateLength(password) {
@@ -107,19 +76,5 @@ function checkPasswordConfirm() {
     } else {
         hintElement.textContent = "";
         hintElement.style.display = "none";
-    }
-}
-
-// 顯示或隱藏密碼
-function togglePassword() {
-    const passwordField = document.getElementById("password");
-    const toggleButton = document.getElementById("toggle-password");
-
-    if (passwordField.type === "password") {
-        passwordField.type = "text";
-        toggleButton.textContent = "隱藏";
-    } else {
-        passwordField.type = "password";
-        toggleButton.textContent = "顯示";
     }
 }

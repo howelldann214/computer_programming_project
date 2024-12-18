@@ -8,6 +8,7 @@
     <!-- 登入檢查 -->
     <script src="../static/js/auth.js" defer></script>
     <script src="../static/js/common.js" defer></script>
+    <script src="../static/js/product_upload.js" defer></script> <!-- 添加商品上傳邏輯 -->
 </head>
 <body>
     <header>
@@ -15,47 +16,37 @@
             <div class="logo">
                 <a href="{{ url_for('index') }}"><img src="../static/icons/icon-1.png" alt="logo"></a>
             </div>
-            <div class="cart">
-                <a href="{{ url_for('cart') }}"><img src="../static/icons/cart.png" alt="cart"></a>
-                <div class="top-right">
-                    <!-- 這裡會由 JavaScript 更新 -->
-                </div>
+            <div class="top-right">
+                <!-- 這裡會由 JavaScript 更新 -->
             </div>
         </div>
     </header>
     <div class="form-container">
         <h1>商品上傳頁面</h1>
-        <form action="/upload_product" method="post" enctype="multipart/form-data">
-            <div class="input-group">
+        <form id="productUploadForm" enctype="multipart/form-data">
+            <div>
                 <label for="productName">商品名稱:</label>
                 <input type="text" id="productName" name="productName" required>
             </div>
-            <div class="input-group">
+            <div>
                 <label for="productDescription">商品敘述:</label>
                 <textarea id="productDescription" name="productDescription" required></textarea>
             </div>
-            <div class="input-group">
+            <div>
                 <label for="productPrice">商品價格:</label>
-                <input type="number" id="productPrice" name="productPrice" required>
+                <input type="number" id="productPrice" name="productPrice" step="0.01" required>
             </div>
-            <div class="input-group">
+            <div>
                 <label for="productStock">商品庫存:</label>
                 <input type="number" id="productStock" name="productStock" min="1" required>
             </div>
-            <div class="input-group">
-                <label for="productFirstImages">商品首張照片:</label>
-                <input type="file" id="productFirstImages" name="productFirstImages" accept="image/*" required>
-            </div>        
-            <div class="input-group">
-                <label for="productImages">商品其他照片 (可上傳多張):</label>
-                <input type="file" id="productImages" name="productImages" accept="image/*" multiple>
-            </div>
             <div>
-                <button type="submit">送出</button>
+                <label for="productFirstImages">商品首張圖片:</label>
+                <input type="file" id="productFirstImages" name="productFirstImages" accept="image/*" required>
             </div>
+            <button type="submit">送出</button>
+            <p id="form-feedback" style="display: none; color: red;"></p> <!-- 用於顯示錯誤或成功信息 -->
         </form>
-        
     </div>
-    
 </body>
 </html>
